@@ -1,0 +1,3261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinix Indonesia | The Future is Now - Official Experience Hub</title>
+  <meta name="description" content="Jelajahi inovasi smartphone Infinix di Indonesia: Seri GT Gaming, Flagship ZERO, NOTE Series All-Round FastCharge, dan HOT Series. Rasakan pengalaman interaktif lengkap di sini!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       CSS VARIABLES & THEME SETUP
+       Infinix Cyber-Mecha Signature Palette
+       ========================================================================== */
+    :root {
+      --bg-dark: #080a10;
+      --bg-surface: #0f131f;
+      --bg-card: rgba(18, 24, 38, 0.7);
+      --bg-card-hover: rgba(26, 35, 56, 0.85);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(0, 255, 102, 0.35);
+
+      /* Infinix Signature Colors */
+      --infinix-green: #00FF66;
+      --infinix-green-glow: rgba(0, 255, 102, 0.4);
+      --infinix-cyan: #00E5FF;
+      --infinix-cyan-glow: rgba(0, 229, 255, 0.4);
+      --infinix-orange: #FF6600;
+      --infinix-purple: #9D00FF;
+      --infinix-gold: #FFD700;
+
+      --text-main: #F3F4F6;
+      --text-muted: #9CA3AF;
+      --text-dim: #6B7280;
+
+      --font-display: 'Orbitron', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      --border-radius-sm: 8px;
+      --border-radius-md: 14px;
+      --border-radius-lg: 22px;
+      --border-radius-full: 9999px;
+    }
+
+    /* Base Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      color-scheme: dark;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 255, 102, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(0, 229, 255, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(157, 0, 255, 0.04) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select {
+      font-family: inherit;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-dark);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1f293d;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--infinix-green);
+    }
+
+    /* Utility Container */
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--border-radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(0, 255, 102, 0.12);
+      color: var(--infinix-green);
+      border: 1px solid rgba(0, 255, 102, 0.3);
+    }
+
+    .badge-cyan {
+      background: rgba(0, 229, 255, 0.12);
+      color: var(--infinix-cyan);
+      border-color: rgba(0, 229, 255, 0.3);
+    }
+
+    .badge-orange {
+      background: rgba(255, 102, 0, 0.12);
+      color: var(--infinix-orange);
+      border-color: rgba(255, 102, 0, 0.3);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #ffffff 40%, #9ca3af 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 650px;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--border-radius-full);
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      border: none;
+      outline: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-primary {
+      background: var(--infinix-green);
+      color: #000;
+      box-shadow: 0 0 20px var(--infinix-green-glow);
+    }
+
+    .btn-primary:hover {
+      background: #1aff75;
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(0, 255, 102, 0.6);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--infinix-green);
+      color: var(--infinix-green);
+      transform: translateY(-2px);
+      background: rgba(0, 255, 102, 0.05);
+    }
+
+    /* ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8, 10, 16, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: #fff;
+    }
+
+    .brand-logo-symbol {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--infinix-green), var(--infinix-cyan));
+      clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-logo span {
+      color: var(--infinix-green);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--infinix-green);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--infinix-green);
+      transition: var(--transition-smooth);
+      box-shadow: 0 0 8px var(--infinix-green);
+    }
+
+    .nav-links a:hover::after, .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .sound-toggle-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      width: 40px;
+      height: 40px;
+      border-radius: var(--border-radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: var(--transition-smooth);
+    }
+
+    .sound-toggle-btn:hover {
+      color: var(--infinix-green);
+      border-color: var(--infinix-green);
+      background: rgba(0, 255, 102, 0.08);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-main);
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero {
+      position: relative;
+      padding: 5rem 0 6rem;
+      overflow: hidden;
+    }
+
+    .hero-glow-blob {
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(0, 255, 102, 0.15) 0%, transparent 70%);
+      top: 10%;
+      right: 5%;
+      filter: blur(60px);
+      z-index: 0;
+      pointer-events: none;
+      animation: pulseGlow 6s infinite alternate ease-in-out;
+    }
+
+    @keyframes pulseGlow {
+      0% { transform: scale(0.9) translate(0, 0); opacity: 0.5; }
+      100% { transform: scale(1.15) translate(-20px, 20px); opacity: 0.85; }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 3.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.12;
+      margin: 1rem 0 1.25rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-content h1 .neon-text {
+      color: var(--infinix-green);
+      text-shadow: 0 0 35px var(--infinix-green-glow);
+    }
+
+    .hero-content p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 540px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .stat-number span {
+      color: var(--infinix-green);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Hero Visual Phone Card */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .phone-showcase-card {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      background: linear-gradient(145deg, rgba(24, 32, 52, 0.8), rgba(12, 16, 26, 0.95));
+      border: 1px solid rgba(0, 255, 102, 0.3);
+      border-radius: 36px;
+      padding: 1.75rem;
+      box-shadow: 
+        0 25px 60px rgba(0, 0, 0, 0.7),
+        0 0 40px rgba(0, 255, 102, 0.15);
+      backdrop-filter: blur(20px);
+      transition: var(--transition-smooth);
+    }
+
+    .phone-showcase-card:hover {
+      transform: translateY(-8px) rotate(-1deg);
+      box-shadow: 
+        0 35px 70px rgba(0, 0, 0, 0.8),
+        0 0 60px rgba(0, 255, 102, 0.25);
+    }
+
+    .phone-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .phone-img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 310px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: radial-gradient(circle at center, #151d2f, #090c14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .phone-img-wrapper img {
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
+      filter: drop-shadow(0 15px 25px rgba(0,0,0,0.8));
+      transition: var(--transition-smooth);
+    }
+
+    .phone-showcase-card:hover .phone-img-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .hero-phone-specs {
+      margin-top: 1.25rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    .spec-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--border-radius-sm);
+      padding: 0.5rem 0.75rem;
+      font-size: 0.75rem;
+    }
+
+    .spec-pill .title {
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .spec-pill .val {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .floating-chip-badge {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: #000;
+      border: 1.5px solid var(--infinix-green);
+      border-radius: var(--border-radius-full);
+      padding: 0.45rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--infinix-green);
+      box-shadow: 0 0 20px var(--infinix-green-glow);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      animation: floatBadge 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatBadge {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-8px); }
+    }
+
+    /* ==========================================================================
+       INNOVATION PILLARS / HIGHLIGHTS
+       ========================================================================== */
+    .innovations {
+      padding: 5rem 0;
+      background: linear-gradient(180deg, transparent, rgba(15, 19, 31, 0.6), transparent);
+    }
+
+    .innovations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .tech-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--border-radius-lg);
+      padding: 2rem;
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+    }
+
+    .tech-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--infinix-green), transparent);
+      opacity: 0;
+      transition: var(--transition-smooth);
+    }
+
+    .tech-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 255, 102, 0.4);
+      background: var(--bg-card-hover);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 25px rgba(0, 255, 102, 0.1);
+    }
+
+    .tech-card:hover::before {
+      opacity: 1;
+    }
+
+    .tech-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--border-radius-md);
+      background: rgba(0, 255, 102, 0.1);
+      border: 1px solid rgba(0, 255, 102, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--infinix-green);
+      margin-bottom: 1.5rem;
+    }
+
+    .tech-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .tech-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       PRODUCT SHOWCASE & FILTER
+       ========================================================================== */
+    .products-section {
+      padding: 6rem 0;
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      padding: 0.55rem 1.25rem;
+      border-radius: var(--border-radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--infinix-green);
+      color: #000;
+      border-color: var(--infinix-green);
+      box-shadow: 0 0 15px var(--infinix-green-glow);
+    }
+
+    .search-box {
+      position: relative;
+      min-width: 260px;
+    }
+
+    .search-input {
+      width: 100%;
+      background: rgba(18, 24, 38, 0.8);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--border-radius-full);
+      padding: 0.65rem 1.25rem 0.65rem 2.5rem;
+      color: #fff;
+      font-size: 0.88rem;
+      outline: none;
+      transition: var(--transition-smooth);
+    }
+
+    .search-input:focus {
+      border-color: var(--infinix-green);
+      box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.95rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      pointer-events: none;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(0, 255, 102, 0.4);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 25px rgba(0, 255, 102, 0.1);
+    }
+
+    .product-badge-wrap {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      z-index: 2;
+    }
+
+    .product-media {
+      position: relative;
+      width: 100%;
+      height: 230px;
+      background: radial-gradient(circle at center, #1b2438 0%, #0d121e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 1.5rem;
+    }
+
+    .product-media img {
+      max-height: 185px;
+      max-width: 90%;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+      transition: var(--transition-smooth);
+    }
+
+    .product-card:hover .product-media img {
+      transform: scale(1.08);
+    }
+
+    .product-details {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-series {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--infinix-green);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+
+    .product-name {
+      font-size: 1.22rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+      color: #fff;
+    }
+
+    .product-tagline {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      min-height: 2.4em;
+    }
+
+    .product-quick-specs {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.8rem;
+      color: #d1d5db;
+    }
+
+    .spec-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .spec-item svg {
+      width: 15px;
+      height: 15px;
+      color: var(--infinix-green);
+      flex-shrink: 0;
+    }
+
+    .product-footer {
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .product-price {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .product-price span {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      display: block;
+      font-weight: 400;
+    }
+
+    /* ==========================================================================
+       INTERACTIVE SECTION 1: SMARTPHONE MATCHER QUIZ
+       ========================================================================== */
+    .interactive-section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .interactive-box {
+      background: linear-gradient(145deg, rgba(20, 27, 43, 0.9), rgba(11, 15, 25, 0.95));
+      border: 1px solid rgba(0, 255, 102, 0.25);
+      border-radius: 28px;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6), 0 0 40px rgba(0, 255, 102, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quiz-progress-bar-container {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--border-radius-full);
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+
+    .quiz-progress-fill {
+      height: 100%;
+      width: 25%;
+      background: linear-gradient(90deg, var(--infinix-green), var(--infinix-cyan));
+      border-radius: var(--border-radius-full);
+      transition: width 0.4s ease;
+      box-shadow: 0 0 10px var(--infinix-green);
+    }
+
+    .quiz-step-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .quiz-question-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1.75rem;
+    }
+
+    .quiz-options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .quiz-option-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--border-radius-md);
+      padding: 1.25rem;
+      text-align: left;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .quiz-option-btn:hover {
+      background: rgba(0, 255, 102, 0.08);
+      border-color: var(--infinix-green);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .quiz-option-btn.selected {
+      background: rgba(0, 255, 102, 0.15);
+      border-color: var(--infinix-green);
+      box-shadow: 0 0 20px var(--infinix-green-glow);
+    }
+
+    .quiz-option-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .quiz-option-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .quiz-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    /* Quiz Result Card */
+    .quiz-result-view {
+      display: none;
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .result-card-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .result-phone-preview {
+      background: radial-gradient(circle at center, #1b273d, #090e18);
+      border-radius: 20px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(0, 255, 102, 0.3);
+      position: relative;
+    }
+
+    .result-phone-preview img {
+      max-height: 250px;
+      object-fit: contain;
+      filter: drop-shadow(0 15px 30px rgba(0,0,0,0.8));
+    }
+
+    .match-score-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--infinix-green);
+      color: #000;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: var(--border-radius-full);
+      box-shadow: 0 0 15px var(--infinix-green);
+    }
+
+    /* ==========================================================================
+       INTERACTIVE SECTION 2: SIDE-BY-SIDE COMPARATOR
+       ========================================================================== */
+    .compare-container {
+      margin-top: 1.5rem;
+    }
+
+    .compare-selectors-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .compare-select-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--border-radius-md);
+      padding: 1.25rem;
+    }
+
+    .compare-select-card label {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .compare-dropdown {
+      width: 100%;
+      background: #111624;
+      border: 1px solid var(--border-subtle);
+      color: #fff;
+      padding: 0.8rem 1rem;
+      border-radius: var(--border-radius-sm);
+      font-size: 0.95rem;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .compare-dropdown:focus {
+      border-color: var(--infinix-green);
+    }
+
+    .compare-table-wrapper {
+      overflow-x: auto;
+      border-radius: var(--border-radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    .compare-table th, .compare-table td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .compare-table th {
+      background: rgba(14, 19, 31, 0.95);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      width: 25%;
+    }
+
+    .compare-table td {
+      background: rgba(18, 24, 38, 0.6);
+      width: 37.5%;
+      color: #fff;
+    }
+
+    .compare-table tr:hover td {
+      background: rgba(26, 35, 56, 0.8);
+    }
+
+    .compare-winner {
+      color: var(--infinix-green);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* ==========================================================================
+       INTERACTIVE SECTION 3: INFINIX GT MECHA STUDIO
+       ========================================================================== */
+    .mecha-studio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .mecha-phone-canvas-box {
+      background: radial-gradient(circle at center, #161e31, #080b12);
+      border-radius: 28px;
+      padding: 2.5rem 1.5rem;
+      border: 1px solid rgba(0, 229, 255, 0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      min-height: 440px;
+      box-shadow: 0 0 40px rgba(0, 229, 255, 0.08);
+    }
+
+    /* Cyber Phone SVG Mockup */
+    .cyber-phone-mockup {
+      width: 200px;
+      height: 380px;
+      background: #141721;
+      border-radius: 36px;
+      border: 3px solid #2d3748;
+      position: relative;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.8);
+      overflow: hidden;
+      transition: background-color 0.5s ease;
+    }
+
+    .cyber-phone-mockup.mecha-silver {
+      background: linear-gradient(145deg, #2a2e39, #171a22);
+      border-color: #525c74;
+    }
+
+    .cyber-phone-mockup.mecha-blue {
+      background: linear-gradient(145deg, #0e2744, #081423);
+      border-color: #1a4d80;
+    }
+
+    .cyber-phone-mockup.mecha-orange {
+      background: linear-gradient(145deg, #44240e, #231208);
+      border-color: #92491a;
+    }
+
+    /* Back camera mecha armor */
+    .mecha-camera-bump {
+      position: absolute;
+      top: 22px;
+      left: 18px;
+      width: 160px;
+      height: 165px;
+      background: rgba(10, 13, 20, 0.95);
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 10px;
+    }
+
+    .mecha-lens {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #1a2233 40%, #05070c 80%);
+      border: 2px solid #3c485e;
+      position: absolute;
+    }
+    .mecha-lens-1 { top: 14px; left: 14px; }
+    .mecha-lens-2 { top: 68px; left: 14px; }
+    .mecha-lens-3 { top: 122px; left: 18px; width: 28px; height: 28px; }
+
+    /* The Interactive RGB Loop LED strip */
+    .mecha-rgb-loop {
+      position: absolute;
+      top: 18px;
+      right: 14px;
+      width: 78px;
+      height: 125px;
+      border: 3px solid var(--infinix-green);
+      border-radius: 16px;
+      clip-path: polygon(0 0, 100% 0, 100% 75%, 65% 100%, 0 100%);
+      transition: all 0.4s ease;
+      box-shadow: 0 0 18px var(--infinix-green), inset 0 0 12px var(--infinix-green);
+    }
+
+    /* RGB animations */
+    .rgb-mode-breathing {
+      animation: rgbBreathing 2.4s infinite ease-in-out;
+    }
+    @keyframes rgbBreathing {
+      0%, 100% { opacity: 0.25; filter: blur(0px); }
+      50% { opacity: 1; filter: drop-shadow(0 0 12px currentColor); }
+    }
+
+    .rgb-mode-strobe {
+      animation: rgbStrobe 0.4s infinite steps(2);
+    }
+    @keyframes rgbStrobe {
+      0% { opacity: 1; }
+      50% { opacity: 0.1; }
+      100% { opacity: 1; }
+    }
+
+    .rgb-mode-rainbow {
+      animation: rgbRainbow 3s linear infinite;
+    }
+    @keyframes rgbRainbow {
+      0% { border-color: #ff0055; box-shadow: 0 0 18px #ff0055; }
+      25% { border-color: #00e5ff; box-shadow: 0 0 18px #00e5ff; }
+      50% { border-color: #00ff66; box-shadow: 0 0 18px #00ff66; }
+      75% { border-color: #ffaa00; box-shadow: 0 0 18px #ffaa00; }
+      100% { border-color: #ff0055; box-shadow: 0 0 18px #ff0055; }
+    }
+
+    .mecha-cyber-stripes {
+      position: absolute;
+      bottom: 25px;
+      left: 20px;
+      right: 20px;
+      height: 70px;
+      background: repeating-linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05) 4px,
+        transparent 4px,
+        transparent 8px
+      );
+      border-left: 2px solid var(--infinix-green);
+      padding: 6px;
+      font-size: 8px;
+      font-family: var(--font-display);
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 2px;
+    }
+
+    /* Live Gaming Simulator Box */
+    .fps-display-badge {
+      position: absolute;
+      bottom: 1rem;
+      background: rgba(0, 0, 0, 0.85);
+      border: 1px solid rgba(0, 255, 102, 0.4);
+      padding: 0.4rem 1rem;
+      border-radius: var(--border-radius-full);
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      color: var(--infinix-green);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .mecha-controls-box h4 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin: 1.5rem 0 0.75rem;
+    }
+    .mecha-controls-box h4:first-of-type {
+      margin-top: 0;
+    }
+
+    .color-swatches {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .swatch-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--border-radius-sm);
+      border: 2px solid var(--border-subtle);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    .swatch-btn:hover, .swatch-btn.active {
+      transform: scale(1.1);
+      border-color: #fff;
+    }
+
+    .mode-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .mode-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      padding: 0.5rem 1rem;
+      border-radius: var(--border-radius-full);
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .mode-pill:hover, .mode-pill.active {
+      background: var(--infinix-cyan);
+      color: #000;
+      border-color: var(--infinix-cyan);
+      box-shadow: 0 0 15px var(--infinix-cyan-glow);
+    }
+
+    /* ==========================================================================
+       INTERACTIVE SECTION 4: CHEETAH X1 FASTCHARGE SIMULATOR
+       ========================================================================== */
+    .fastcharge-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .battery-visual-card {
+      background: radial-gradient(circle at center, #192336, #090c14);
+      border: 1px solid rgba(0, 255, 102, 0.3);
+      border-radius: 24px;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .battery-cell-outer {
+      width: 140px;
+      height: 240px;
+      border: 4px solid #374151;
+      border-radius: 24px;
+      padding: 8px;
+      position: relative;
+      display: flex;
+      flex-direction: column-reverse;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .battery-cell-outer::before {
+      content: '';
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 44px;
+      height: 10px;
+      background: #4b5563;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .battery-level-fill {
+      width: 100%;
+      height: 15%;
+      background: linear-gradient(180deg, #00FF66 0%, #00cc52 100%);
+      border-radius: 14px;
+      transition: height 0.2s linear;
+      box-shadow: 0 0 20px rgba(0, 255, 102, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .battery-percentage-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #fff;
+      text-shadow: 0 0 15px rgba(0,0,0,0.8);
+      pointer-events: none;
+    }
+
+    .charging-wattage-badge {
+      margin-top: 1.5rem;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--infinix-green);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .temp-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    /* ==========================================================================
+       INTERACTIVE SECTION 5: TRIVIA MINI-GAME
+       ========================================================================== */
+    .trivia-game-box {
+      background: linear-gradient(145deg, rgba(22, 29, 46, 0.85), rgba(10, 14, 24, 0.95));
+      border: 1px solid rgba(157, 0, 255, 0.35);
+      border-radius: 28px;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 40px rgba(157, 0, 255, 0.1);
+    }
+
+    .trivia-question-box {
+      min-height: 220px;
+    }
+
+    .trivia-feedback-alert {
+      padding: 0.85rem 1.25rem;
+      border-radius: var(--border-radius-sm);
+      margin-top: 1.25rem;
+      font-size: 0.92rem;
+      display: none;
+    }
+    .trivia-feedback-alert.correct {
+      display: block;
+      background: rgba(0, 255, 102, 0.15);
+      border: 1px solid var(--infinix-green);
+      color: #00ff66;
+    }
+    .trivia-feedback-alert.wrong {
+      display: block;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid #ef4444;
+      color: #f87171;
+    }
+
+    /* ==========================================================================
+       MODAL POPUP
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #0f1422;
+      border: 1px solid rgba(0, 255, 102, 0.3);
+      border-radius: 24px;
+      width: 100%;
+      max-width: 780px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      position: relative;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.9), 0 0 50px rgba(0, 255, 102, 0.15);
+      animation: modalScale 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalScale {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .modal-close-btn:hover {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: #ef4444;
+      color: #ef4444;
+    }
+
+    /* ==========================================================================
+       BRAND STORY / ECOSYSTEM
+       ========================================================================== */
+    .brand-story {
+      padding: 6rem 0;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at 50% 50%, rgba(20, 27, 43, 0.5), transparent 70%);
+    }
+
+    .brand-timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .timeline-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--border-radius-md);
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    .timeline-year {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--infinix-green);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer {
+      background: #05070b;
+      padding: 5rem 0 2rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--infinix-green);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .social-icon-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: var(--transition-smooth);
+    }
+
+    .social-icon-btn:hover {
+      background: var(--infinix-green);
+      color: #000;
+      border-color: var(--infinix-green);
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.82rem;
+      color: var(--text-dim);
+    }
+
+    /* Toast Notification */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 3000;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      pointer-events: none;
+    }
+
+    .toast-msg {
+      background: rgba(18, 24, 38, 0.95);
+      border: 1px solid var(--infinix-green);
+      color: #fff;
+      padding: 0.85rem 1.4rem;
+      border-radius: var(--border-radius-full);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 20px var(--infinix-green-glow);
+      font-size: 0.88rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      backdrop-filter: blur(10px);
+      animation: toastIn 0.3s ease, toastOut 0.3s ease 2.7s forwards;
+    }
+
+    @keyframes toastIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes toastOut {
+      from { transform: translateX(0); opacity: 1; }
+      to { transform: translateX(100%); opacity: 0; }
+    }
+
+    /* ==========================================================================
+       RESPONSIVE DESIGN (TABLET & MOBILE)
+       ========================================================================== */
+    @media (max-width: 992px) {
+      .hero-grid, .mecha-studio-grid, .fastcharge-grid, .result-card-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .hero-visual {
+        order: -1;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: #0a0d17;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.25rem;
+        border-bottom: 1px solid var(--border-subtle);
+      }
+      .nav-links.mobile-open {
+        display: flex;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .compare-selectors-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand-logo" title="Infinix Indonesia">
+        <div class="brand-logo-symbol">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#000" stroke="none">
+            <path d="M12 2L2 22h20L12 2zm0 5l6.5 13H5.5L12 7z"/>
+          </svg>
+        </div>
+        INFINIX<span>.ID</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="active">Beranda</a></li>
+        <li><a href="#produk">Lini Produk</a></li>
+        <li><a href="#kuis-matcher">Rekomendasi HP</a></li>
+        <li><a href="#mecha-studio">GT Studio</a></li>
+        <li><a href="#fastcharge">FastCharge Sim</a></li>
+        <li><a href="#komparasi">Komparasi</a></li>
+        <li><a href="#trivia">Kuis Trivia</a></li>
+        <li><a href="#tentang">Tentang Brand</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Sound Synthesizer Mute/Unmute Toggle -->
+        <button class="sound-toggle-btn" id="soundBtn" title="Aktifkan/Bisukan Efek Suara Cyber">
+          <svg id="soundIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+        </button>
+
+        <a href="https://id.infinixmobility.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.8rem;">
+          Web Resmi
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+
+        <button class="mobile-menu-btn" id="menuToggle" aria-label="Buka Menu Navigasi">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section class="hero" id="hero">
+    <div class="hero-glow-blob"></div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          THE FUTURE IS NOW
+        </div>
+        <h1>Taklukkan Batas Bersama <span class="neon-text">Infinix</span> Indonesia</h1>
+        <p>
+          Teknologi flagship revolusioner berjiwa muda. Dari monster gaming seri <strong>GT 20 Pro</strong>, mahakarya vlog sinematik <strong>ZERO 40</strong>, hingga pengisian daya kilat <strong>All-Round FastCharge 2.0</strong> bertenaga chip <strong>Cheetah X1</strong>.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#kuis-matcher" class="btn btn-primary" onclick="playBeep(600, 0.1)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 8 8 12 12 16 12 8"></polygon></svg>
+            Temukan HP Idealmu
+          </a>
+          <a href="#mecha-studio" class="btn btn-outline" onclick="playBeep(450, 0.1)">
+            Coba GT Mecha Studio
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">100<span>W</span></div>
+            <div class="stat-label">Multi-Speed FastCharge</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">144<span>Hz</span></div>
+            <div class="stat-label">Bezel-less AMOLED</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">108<span>MP</span></div>
+            <div class="stat-label">OIS Ultra Camera</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Phone Mockup Card -->
+      <div class="hero-visual">
+        <div class="phone-showcase-card">
+          <div class="floating-chip-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            Dimensity 8200 Ultimate 4nm
+          </div>
+
+          <div class="phone-header-bar">
+            <span>OFFICIAL ESPORTS MPL ID</span>
+            <span style="color: var(--infinix-green); font-weight:700;">GT 20 PRO 5G</span>
+          </div>
+
+          <div class="phone-img-wrapper">
+            <img 
+              src="https://global.dev.infinixmobility.com/media/wysiwyg/x6851_note40pro5g_base4_family.png" 
+              alt="Infinix Smartphone Flagship"
+              onerror="this.onerror=null; this.src='https://id.pro.infinixmobility.com/media/homeblock/20240223-181429.jpg';"
+            >
+          </div>
+
+          <div class="hero-phone-specs">
+            <div class="spec-pill">
+              <span class="title">Dedicated Display</span>
+              <span class="val">Pixelworks X5 Turbo</span>
+            </div>
+            <div class="spec-pill">
+              <span class="title">Refresh Rate</span>
+              <span class="val">144Hz AMOLED</span>
+            </div>
+            <div class="spec-pill">
+              <span class="title">Suhu Tetap Dingin</span>
+              <span class="val">Bypass Charge 2.0</span>
+            </div>
+            <div class="spec-pill">
+              <span class="title">Desain Bodi</span>
+              <span class="val">Cyber Mecha RGB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TECH HIGHLIGHTS
+       ========================================================================== -->
+  <section class="innovations">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <span class="badge badge-cyan">Teknologi Eksklusif Infinix</span>
+        <h2 class="section-title" style="margin-top: 0.5rem;">Inovasi Masa Depan di Tanganmu</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Infinix terus merevolusi industri smartphone melalui riset chip mandiri dan ekosistem terdepan.
+        </p>
+      </div>
+
+      <div class="innovations-grid">
+        <div class="tech-card">
+          <div class="tech-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+              <rect x="9" y="9" width="6" height="6"></rect>
+              <line x1="9" y1="1" x2="9" y2="4"></line>
+              <line x1="15" y1="1" x2="15" y2="4"></line>
+              <line x1="9" y1="20" x2="9" y2="23"></line>
+              <line x1="15" y1="20" x2="15" y2="23"></line>
+              <line x1="20" y1="9" x2="23" y2="9"></line>
+              <line x1="20" y1="14" x2="23" y2="14"></line>
+              <line x1="1" y1="9" x2="4" y2="9"></line>
+              <line x1="1" y1="14" x2="4" y2="14"></line>
+            </svg>
+          </div>
+          <h3>Chip Mandiri Cheetah X1</h3>
+          <p>Chip manajemen daya pertama karya Infinix. Menghitung voltase & suhu hingga level milidetik untuk pengisian daya ultra-aman dan awet hingga bertahun-tahun.</p>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon" style="color: var(--infinix-cyan); background: rgba(0,229,255,0.1); border-color: rgba(0,229,255,0.25);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <h3>All-Round FastCharge 2.0</h3>
+          <p>Fleksibilitas tanpa tanding: FastCharge multi-speed hingga 100W, Wireless MagCharge 20W magnetik, pengisian suhu ekstrem -20°C, dan Reverse Charge nirkabel.</p>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon" style="color: var(--infinix-orange); background: rgba(255,102,0,0.1); border-color: rgba(255,102,0,0.25);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="6 2 18 2 18 6 6 6 6 2"></polygon>
+              <rect x="3" y="6" width="18" height="12" rx="2"></rect>
+              <circle cx="8" cy="12" r="1"></circle>
+              <circle cx="16" cy="12" r="1"></circle>
+            </svg>
+          </div>
+          <h3>Dual-Chip Gaming Architecture</h3>
+          <p>Kombinasi Dimensity 8200 Ultimate 4nm dengan chip display Pixelworks X5 Turbo menghadirkan interpolasi game hingga 120 FPS tanpa drop frame dan konsumsi daya super hemat.</p>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon" style="color: #c084fc; background: rgba(192,132,252,0.1); border-color: rgba(192,132,252,0.25);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <h3>XOS 14 & Asisten AI Folax</h3>
+          <p>Antarmuka bersih, responsif, bebas iklan pada seri flagship. Terintegrasi Folax AI (didukung LLM) untuk penerjemahan instan, AI Eraser foto, dan peringatan pintar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PRODUCT CATALOG & FILTER
+       ========================================================================== -->
+  <section class="products-section" id="produk">
+    <div class="container">
+      <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem;">
+        <span class="badge">Katalog Lengkap Resmi</span>
+        <h2 class="section-title">Lini Seri Infinix Indonesia</h2>
+        <p class="section-subtitle">
+          Pilih kategori yang sesuai dengan gaya hidupmu. Semua data disinkronkan dengan informasi resmi Infinix Mobility Indonesia.
+        </p>
+      </div>
+
+      <!-- Filter Pills and Live Search Bar -->
+      <div class="filter-bar">
+        <div class="filter-pills" id="filterPillsContainer">
+          <button class="filter-btn active" data-category="all">Semua Seri</button>
+          <button class="filter-btn" data-category="GT">GT Series (Gaming)</button>
+          <button class="filter-btn" data-category="ZERO">ZERO (Flagship Vlog)</button>
+          <button class="filter-btn" data-category="NOTE">NOTE (Performance)</button>
+          <button class="filter-btn" data-category="HOT">HOT (Trendi Sadis)</button>
+          <button class="filter-btn" data-category="SMART">SMART (Hemat Juara)</button>
+        </div>
+
+        <div class="search-box">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="searchInput" class="search-input" placeholder="Cari tipe, chipset, kamera...">
+        </div>
+      </div>
+
+      <!-- Products Grid (Dynamically Populated by JS) -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE FEATURE 1: SMARTPHONE MATCHER QUIZ
+       ========================================================================== -->
+  <section class="interactive-section" id="kuis-matcher">
+    <div class="container">
+      <div class="interactive-box">
+        <div class="quiz-step-header">
+          <div>
+            <span class="badge">Interaktif 1: AI Matcher</span>
+            <h2 class="section-title" style="margin: 0.5rem 0 0.2rem; font-size: clamp(1.5rem, 3vw, 2.2rem);">
+              Rekomendasi HP Infinix Untukmu
+            </h2>
+          </div>
+          <div id="stepCounterBadge" style="font-family: var(--font-display); font-size: 0.85rem; color: var(--infinix-green);">
+            Langkah 1 dari 4
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="quiz-progress-bar-container">
+          <div class="quiz-progress-fill" id="quizProgressFill"></div>
+        </div>
+
+        <!-- Question View Container -->
+        <div id="quizQuestionView">
+          <h3 class="quiz-question-title" id="quizQuestionTitle">Apa prioritas kebutuhan utamamu dalam menggunakan smartphone?</h3>
+          
+          <div class="quiz-options-grid" id="quizOptionsGrid">
+            <!-- Dynamic Options -->
+          </div>
+
+          <div class="quiz-actions">
+            <button class="btn btn-outline" id="quizPrevBtn" style="visibility: hidden;">
+              ← Kembali
+            </button>
+            <span style="font-size: 0.85rem; color: var(--text-dim);">Pilih satu opsi untuk lanjut</span>
+          </div>
+        </div>
+
+        <!-- Result View Container -->
+        <div class="quiz-result-view" id="quizResultView">
+          <div class="result-card-inner">
+            <div class="result-phone-preview">
+              <div class="match-score-badge" id="resultMatchPercent">98% Match</div>
+              <img id="resultPhoneImg" src="" alt="Rekomendasi Infinix">
+            </div>
+
+            <div>
+              <span class="badge badge-cyan" id="resultPhoneSeries">GT SERIES</span>
+              <h3 id="resultPhoneName" style="font-family: var(--font-display); font-size: 1.8rem; margin: 0.5rem 0 0.75rem; color: #fff;">
+                Infinix GT 20 Pro 5G
+              </h3>
+              <p id="resultPhoneReason" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6;">
+                Smartphone ini adalah pilihan paling sempurna untukmu karena dibekali dual chip gaming bertenaga tinggi, pendingin VC Liquid, dan layar 144Hz AMOLED tanpa lag.
+              </p>
+
+              <div id="resultHighlightSpecs" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1.75rem;">
+                <!-- Highlights -->
+              </div>
+
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button class="btn btn-primary" id="resultViewDetailBtn">
+                  Lihat Spesifikasi Lengkap
+                </button>
+                <button class="btn btn-outline" id="quizRestartBtn">
+                  Ulangi Kuis ↺
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE FEATURE 2: GT MECHA STUDIO & RGB SIMULATOR
+       ========================================================================== -->
+  <section class="interactive-section" id="mecha-studio" style="background: rgba(10, 14, 24, 0.4);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <span class="badge badge-orange">Interaktif 2: Studio Kustomisasi 3D</span>
+        <h2 class="section-title" style="margin-top: 0.5rem;">Infinix GT Mecha Studio</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Rasakan sensasi personalisasi bodi belakang <strong>Infinix GT 20 Pro</strong>. Atur warna lampu LED Mecha Loop, gaya pencahayaan, dan uji akselerasi frame rate gaming display!
+        </p>
+      </div>
+
+      <div class="mecha-studio-grid">
+        <!-- Interactive Canvas Box -->
+        <div class="mecha-phone-canvas-box" id="mechaCanvasBox">
+          <div class="cyber-phone-mockup mecha-silver" id="cyberPhoneBody">
+            <div class="mecha-camera-bump">
+              <div class="mecha-lens mecha-lens-1"></div>
+              <div class="mecha-lens mecha-lens-2"></div>
+              <div class="mecha-lens mecha-lens-3"></div>
+              
+              <!-- RGB Mecha Loop LED Strip -->
+              <div class="mecha-rgb-loop rgb-mode-breathing" id="mechaRgbStrip"></div>
+            </div>
+
+            <div class="mecha-cyber-stripes">
+              CYBER MECHA DESIGN<br>
+              GT ESPORTS EDITION
+            </div>
+          </div>
+
+          <div class="fps-display-badge" id="fpsDisplayBadge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Mode Game: <strong id="fpsValueText" style="color:#fff; margin-left:4px;">120 FPS Turbo</strong>
+          </div>
+        </div>
+
+        <!-- Controls Box -->
+        <div class="mecha-controls-box">
+          <h4>1. Pilih Warna Bodi Smartphone</h4>
+          <div class="color-swatches">
+            <button class="swatch-btn active" data-color="mecha-silver" style="background: #2a2e39;" title="Mecha Silver"></button>
+            <button class="swatch-btn" data-color="mecha-blue" style="background: #0e2744;" title="Mecha Blue"></button>
+            <button class="swatch-btn" data-color="mecha-orange" style="background: #44240e;" title="Mecha Orange"></button>
+          </div>
+
+          <h4>2. Warna Lampu LED Mecha Loop</h4>
+          <div class="color-swatches" id="rgbColorPickers">
+            <button class="swatch-btn active" data-rgb="#00FF66" style="background: #00FF66;" title="Neon Green"></button>
+            <button class="swatch-btn" data-rgb="#00E5FF" style="background: #00E5FF;" title="Cyber Cyan"></button>
+            <button class="swatch-btn" data-rgb="#FF0055" style="background: #FF0055;" title="Pulse Red"></button>
+            <button class="swatch-btn" data-rgb="#9D00FF" style="background: #9D00FF;" title="Neon Violet"></button>
+            <button class="swatch-btn" data-rgb="#FFD700" style="background: #FFD700;" title="Solar Gold"></button>
+          </div>
+
+          <h4>3. Efek Animasi Cahaya Mecha</h4>
+          <div class="mode-pills-row" id="rgbModePills">
+            <button class="mode-pill active" data-mode="rgb-mode-breathing">Breathing (Nafas)</button>
+            <button class="mode-pill" data-mode="rgb-mode-strobe">Strobe (Kedip Kilat)</button>
+            <button class="mode-pill" data-mode="rgb-mode-rainbow">Party Rainbow</button>
+            <button class="mode-pill" data-mode="static">Static (Menyala Solid)</button>
+          </div>
+
+          <h4>4. Simulasi Gaming Display (Pixelworks Chip)</h4>
+          <div style="display: flex; gap: 1rem; align-items: center; margin-top: 0.5rem;">
+            <button class="btn btn-outline" id="toggleFpsBtn" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">
+              Ubah ke Mode 60 FPS Standar
+            </button>
+            <button class="btn btn-outline" id="triggerAudioPulseBtn" style="font-size: 0.8rem; padding: 0.6rem 1.2rem;">
+              Tes Suara Mecha
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE FEATURE 3: CHEETAH X1 FASTCHARGE SIMULATOR
+       ========================================================================== -->
+  <section class="interactive-section" id="fastcharge">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <span class="badge badge-cyan">Interaktif 3: Simulasi Daya Real-Time</span>
+        <h2 class="section-title" style="margin-top: 0.5rem;">Kalkulator Kecepatan Cheetah X1</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Lihat bagaimana chip manajemen daya mandiri <strong>Infinix Cheetah X1</strong> mengoptimalkan kecepatan pengisian daya 0-100% sambil menjaga baterai tetap dingin.
+        </p>
+      </div>
+
+      <div class="fastcharge-grid">
+        <!-- Interactive Battery Graphic -->
+        <div class="battery-visual-card">
+          <div class="battery-cell-outer">
+            <div class="battery-level-fill" id="batteryLevelFill"></div>
+            <div class="battery-percentage-text" id="batteryPercentText">15%</div>
+          </div>
+
+          <div class="charging-wattage-badge" id="wattageBadge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span id="wattageValue">Standby</span>
+          </div>
+
+          <div class="temp-indicator" id="tempIndicator">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path>
+            </svg>
+            Suhu Baterai: <strong id="batteryTempText" style="color: var(--infinix-green);">32°C (Optimal)</strong>
+          </div>
+        </div>
+
+        <!-- Simulation Controls -->
+        <div class="fastcharge-controls">
+          <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.5rem; color: #fff;">
+            Atur Mode Pengisian Daya
+          </h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+            Pilih mode Cheetah X1 untuk melihat perbandingan kecepatan & temperatur perlindungan multi-speed.
+          </p>
+
+          <div class="quiz-options-grid" style="grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 1.75rem;">
+            <div class="quiz-option-btn selected" data-charge-mode="hyper">
+              <div class="quiz-option-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--infinix-green)"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                Hyper Mode (100W All-Round Turbo)
+              </div>
+              <div class="quiz-option-desc">Kecepatan pengisian maksimal: 0% ke 50% hanya dalam 12 menit.</div>
+            </div>
+
+            <div class="quiz-option-btn" data-charge-mode="smart">
+              <div class="quiz-option-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--infinix-cyan)"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Smart Mode (Keseimbangan Cerdas)
+              </div>
+              <div class="quiz-option-desc">Kombinasi efisiensi pengisian cepat dengan menjaga usia baterai hingga 5 tahun.</div>
+            </div>
+
+            <div class="quiz-option-btn" data-charge-mode="lowtemp">
+              <div class="quiz-option-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#60a5fa"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                Low-Temp Mode (Dingin Sambil Mabar)
+              </div>
+              <div class="quiz-option-desc">Menjaga temperatur ponsel di bawah 37°C meskipun sedang bermain game berat.</div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: center;">
+            <button class="btn btn-primary" id="startChargeBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Mulai Pengisian Daya
+            </button>
+            <button class="btn btn-outline" id="resetChargeBtn">
+              Reset Baterai
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE FEATURE 4: SIDE-BY-SIDE PRODUCT COMPARATOR
+       ========================================================================== -->
+  <section class="interactive-section" id="komparasi" style="background: rgba(8, 10, 16, 0.6);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <span class="badge">Interaktif 4: Perbandingan Spesifikasi</span>
+        <h2 class="section-title" style="margin-top: 0.5rem;">Bandingkan 2 Seri HP Infinix</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Pilih 2 smartphone Infinix favoritmu untuk melihat perbandingan langsung spesifikasi dapur pacu, kamera, dan fitur khususnya.
+        </p>
+      </div>
+
+      <div class="compare-container">
+        <div class="compare-selectors-grid">
+          <div class="compare-select-card">
+            <label for="compareSelectA">Smartphone Pilihan 1</label>
+            <select id="compareSelectA" class="compare-dropdown">
+              <!-- Populated by JS -->
+            </select>
+          </div>
+          <div class="compare-select-card">
+            <label for="compareSelectB">Smartphone Pilihan 2</label>
+            <select id="compareSelectB" class="compare-dropdown">
+              <!-- Populated by JS -->
+            </select>
+          </div>
+        </div>
+
+        <div class="compare-table-wrapper">
+          <table class="compare-table" id="compareTable">
+            <thead>
+              <tr>
+                <th>Fitur / Spesifikasi</th>
+                <th id="compareColNameA" style="color: var(--infinix-green);">Model A</th>
+                <th id="compareColNameB" style="color: var(--infinix-cyan);">Model B</th>
+              </tr>
+            </thead>
+            <tbody id="compareTableBody">
+              <!-- Generated Dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE FEATURE 5: TRIVIA MINI-GAME
+       ========================================================================== -->
+  <section class="interactive-section" id="trivia">
+    <div class="container">
+      <div class="trivia-game-box">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <span class="badge badge-orange">Interaktif 5: Uji Pengetahuan</span>
+          <h2 class="section-title" style="margin-top: 0.5rem; font-size: clamp(1.6rem, 3vw, 2.3rem);">
+            Kuis Infinix Fans Master
+          </h2>
+          <p class="section-subtitle" style="margin: 0 auto;">
+            Seberapa paham kamu tentang inovasi, sejarah, dan teknologi Infinix? Jawab 4 pertanyaan seru ini dan menangkan lencana keahlianmu!
+          </p>
+        </div>
+
+        <div class="trivia-question-box" id="triviaQuestionContainer">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; color: var(--text-muted); font-size: 0.85rem;">
+            <span id="triviaProgressText">Soal 1 dari 4</span>
+            <span id="triviaScoreText" style="color: var(--infinix-green); font-weight: 700;">Skor: 0</span>
+          </div>
+
+          <h3 id="triviaQuestionText" style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 1.5rem;">
+            Apa nama chip manajemen daya pertama buatan mandiri oleh Infinix?
+          </h3>
+
+          <div class="quiz-options-grid" id="triviaOptionsGrid" style="grid-template-columns: 1fr 1fr;">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div class="trivia-feedback-alert" id="triviaFeedback"></div>
+        </div>
+
+        <div id="triviaFinishView" style="display: none; text-align: center; padding: 2rem 0;">
+          <div style="font-size: 3.5rem; margin-bottom: 1rem;">🏆</div>
+          <h3 style="font-family: var(--font-display); font-size: 1.8rem; color: #fff; margin-bottom: 0.5rem;">
+            Kuis Selesai!
+          </h3>
+          <p id="triviaFinalScoreDesc" style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1.05rem;">
+            Kamu berhasil menjawab 4 dari 4 soal dengan benar!
+          </p>
+          <button class="btn btn-primary" id="restartTriviaBtn">
+            Mainkan Lagi ↺
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       BRAND STORY & ECOSYSTEM
+       ========================================================================== -->
+  <section class="brand-story" id="tentang">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <span class="badge">Tentang Infinix Mobility</span>
+        <h2 class="section-title" style="margin-top: 0.5rem;">Memberdayakan Generasi Muda</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Didirikan pada tahun 2013, Infinix berkomitmen membangun teknologi mutakhir yang penuh gaya, berani, dan dapat diakses oleh semua anak muda di seluruh dunia.
+        </p>
+      </div>
+
+      <div class="brand-timeline">
+        <div class="timeline-card">
+          <div class="timeline-year">2013</div>
+          <h4 style="color: #fff; margin-bottom: 0.5rem;">Awal Mula Visi</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">
+            Infinix Mobility resmi didirikan dengan tujuan menghadirkan smartphone berdesain trendi bagi kalangan muda di pasar berkembang.
+          </p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-year">2015</div>
+          <h4 style="color: #fff; margin-bottom: 0.5rem;">Ekspansi Indonesia</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">
+            Memasuki pasar Indonesia melalui seri legendaris Hot Note, merebut hati jutaan generasi muda dan pecinta gawai berkat harga rasional.
+          </p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-year">2023</div>
+          <h4 style="color: #fff; margin-bottom: 0.5rem;">Revolusi Gaming GT</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">
+            Meluncurkan lini GT Series sebagai Official Smartphone MPL ID, memperkuat ekosistem esports profesional tanah air.
+          </p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-year">2024+</div>
+          <h4 style="color: #fff; margin-bottom: 0.5rem;">Chip Mandiri & AI</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">
+            Infinix merilis chip Cheetah X1, wireless MagCharge, serta integrasi kamera 4K 60FPS vlog dengan audio berkelas dari JBL.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       MODAL: SPESIFIKASI LENGKAP PRODUK
+       ========================================================================== -->
+  <div class="modal-backdrop" id="productModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Tutup Detail">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 2rem; align-items: center;" id="modalBodyContent">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#hero" class="brand-logo" style="margin-bottom: 1rem; display: inline-flex;">
+            <div class="brand-logo-symbol">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#000" stroke="none">
+                <path d="M12 2L2 22h20L12 2zm0 5l6.5 13H5.5L12 7z"/>
+              </svg>
+            </div>
+            INFINIX<span>.ID</span>
+          </a>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+            Infinix Indonesia menghadirkan inovasi teknologi masa depan berjiwa muda. Dari smartphone gaming GT, mahakarya ZERO, hingga laptop INBOOK.
+          </p>
+          <div class="badge">Official Web Experience</div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Lini Smartphone</h4>
+          <ul class="footer-links">
+            <li><a href="#produk" onclick="filterCategory('GT')">Infinix GT Series</a></li>
+            <li><a href="#produk" onclick="filterCategory('ZERO')">Infinix ZERO Series</a></li>
+            <li><a href="#produk" onclick="filterCategory('NOTE')">Infinix NOTE Series</a></li>
+            <li><a href="#produk" onclick="filterCategory('HOT')">Infinix HOT Series</a></li>
+            <li><a href="#produk" onclick="filterCategory('SMART')">Infinix SMART Series</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Pusat Bantuan & Layanan</h4>
+          <ul class="footer-links">
+            <li><a href="https://id.infinixmobility.com/care" target="_blank" rel="noopener">Carlcare Service Center</a></li>
+            <li><a href="https://id.infinixmobility.com/" target="_blank" rel="noopener">Cek Garansi Resmi</a></li>
+            <li><a href="https://id.infinixmobility.com/" target="_blank" rel="noopener">Pembaruan Software XOS</a></li>
+            <li><a href="https://id.infinixmobility.com/" target="_blank" rel="noopener">Tanya Jawab (FAQ)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Koneksi Komunitas</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Bergabunglah dengan jutaan X-Fans di seluruh Indonesia untuk info turnamen esports dan promo spesial.
+          </p>
+          <div class="social-links">
+            <a href="https://instagram.com/infinixid" target="_blank" rel="noopener" class="social-icon-btn" title="Instagram Infinix ID">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://youtube.com/@InfinixIndonesia" target="_blank" rel="noopener" class="social-icon-btn" title="YouTube Infinix ID">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+            <a href="https://tiktok.com/@infinixid" target="_blank" rel="noopener" class="social-icon-btn" title="TikTok Infinix ID">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+            </a>
+            <a href="https://id.infinixmobility.com/" target="_blank" rel="noopener" class="social-icon-btn" title="Portal Resmi Infinix">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Infinix Mobility Limited. Terinspirasi dari portal resmi <a href="https://id.infinixmobility.com/" target="_blank" rel="noopener" style="color: var(--infinix-green);">id.infinixmobility.com</a>.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privasi</a>
+          <a href="#">Syarat Penggunaan</a>
+          <a href="#">Peta Situs</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT LOGIC (SINGLE-FILE INTEGRATED)
+       ========================================================================== -->
+  <script>
+    /* ==========================================================================
+       1. SYNTHESIZED SOUND SYSTEM (WEB AUDIO API - ZERO EXTERNAL ASSETS)
+       ========================================================================== */
+    let audioCtx = null;
+    let isSoundMuted = false;
+
+    function getAudioContext() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) {
+          audioCtx = new AudioContext();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playBeep(freq = 600, duration = 0.08, type = 'sine') {
+      if (isSoundMuted) return;
+      try {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+
+        gain.gain.setValueAtTime(0.08, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start();
+        osc.stop(ctx.currentTime + duration);
+      } catch (e) {
+        // Audio might be blocked until user gesture
+      }
+    }
+
+    function playSuccessChime() {
+      if (isSoundMuted) return;
+      playBeep(523.25, 0.1); // C5
+      setTimeout(() => playBeep(659.25, 0.1), 100); // E5
+      setTimeout(() => playBeep(783.99, 0.2), 200); // G5
+    }
+
+    const soundBtn = document.getElementById('soundBtn');
+    soundBtn.addEventListener('click', () => {
+      isSoundMuted = !isSoundMuted;
+      soundBtn.style.color = isSoundMuted ? 'var(--text-dim)' : 'var(--infinix-green)';
+      soundBtn.style.borderColor = isSoundMuted ? 'var(--border-subtle)' : 'var(--infinix-green)';
+      showToast(isSoundMuted ? 'Efek Suara Dimatikan' : 'Efek Suara Diaktifkan');
+      if (!isSoundMuted) playBeep(800, 0.1);
+    });
+
+    function showToast(message) {
+      const toastContainer = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'toast-msg';
+      toast.innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span>${message}</span>
+      `;
+      toastContainer.appendChild(toast);
+      setTimeout(() => {
+        if (toast.parentNode) toast.parentNode.removeChild(toast);
+      }, 3000);
+    }
+
+    /* ==========================================================================
+       2. DATABASE SMARTPHONE INFINIX (DATA RESMI DARI id.infinixmobility.com)
+       ========================================================================== */
+    const infinixData = [
+      {
+        id: "gt-20-pro",
+        name: "Infinix GT 20 Pro 5G",
+        series: "GT",
+        tagline: "Official Gaming Phone MPL ID Season 13 & 14",
+        price: "Rp 4.399.000",
+        priceNum: 4399000,
+        chipset: "MediaTek Dimensity 8200 Ultimate 4nm + Pixelworks X5 Turbo",
+        display: "6.78\" FHD+ AMOLED 144Hz Bezel-less, 1300 nits",
+        camera: "108MP OIS Triple Camera + 32MP Selfie",
+        battery: "5000mAh, 45W Hyper Charge, Bypass Mode 2.0",
+        specialFeature: "Cyber Mecha RGB Loop Interface & Clean XOS",
+        categoryScore: { gaming: 99, camera: 88, battery: 92, daily: 90, budget: 85 },
+        imgUrl: "https://global.dev.infinixmobility.com/media/wysiwyg/x6851_note40pro5g_base4_family.png",
+        officialUrl: "https://id.infinixmobility.com/"
+      },
+      {
+        id: "zero-40-5g",
+        name: "Infinix ZERO 40 5G",
+        series: "ZERO",
+        tagline: "Vlog Flagship 4K 60FPS Front & Rear Camera",
+        price: "Rp 4.899.000",
+        priceNum: 4899000,
+        chipset: "MediaTek Dimensity 8200 Ultimate 5G (4nm)",
+        display: "6.78\" 3D Curved AMOLED 144Hz, Corning Gorilla Glass",
+        camera: "108MP OIS + 50MP Ultra-Wide 120° + 50MP PDAF Vlog Selfie",
+        battery: "5000mAh, 45W Wired + 20W Wireless MagCharge",
+        specialFeature: "GoPro Seamless Integration, Tuned by JBL",
+        categoryScore: { gaming: 92, camera: 98, battery: 90, daily: 95, budget: 80 },
+        imgUrl: "https://global.dev.infinixmobility.com/media/wysiwyg/x6853_note40_base4_family.png",
+        officialUrl: "https://id.infinixmobility.com/"
+      },
+      {
+        id: "note-40-pro-5g",
+        name: "Infinix NOTE 40 Pro 5G",
+        series: "NOTE",
+        tagline: "All-Round FastCharge 2.0 bertenaga Cheetah X1",
+        price: "Rp 3.599.000",
+        priceNum: 3599000,
+        chipset: "MediaTek Dimensity 7020 5G 6nm",
+        display: "6.78\" 3D Curved AMOLED 120Hz In-Display Fingerprint",
+        camera: "108MP OIS Super-Zoom Camera + 32MP Selfie",
+        battery: "5000mAh, 45W All-Round FastCharge + 20W Wireless MagCharge",
+        specialFeature: "Active Halo AI Lighting & Dual Speaker JBL",
+        categoryScore: { gaming: 86, camera: 90, battery: 97, daily: 94, budget: 89 },
+        imgUrl: "https://global.dev.infinixmobility.com/media/wysiwyg/x6851_note40pro5g_base4_family.png",
+        officialUrl: "https://id.infinixmobility.com/"
+      },
+      {
+        id: "note-40-pro-plus",
+        name: "Infinix NOTE 40 Pro+ 5G",
+        series: "NOTE",
+        tagline: "100W Multi-Speed FastCharge + MagKit Included",
+        price: "Rp 4.299.000",
+        priceNum: 4299000,
+        chipset: "MediaTek Dimensity 7020 5G + Cheetah X1 Chip",
+        display: "6.78\" 3D Curved AMOLED 120Hz, 1300 nits Peak",
+        camera: "108MP OIS 3X Lossless Zoom + 32MP Front",
+        battery: "4600mAh, 100W Multi-Speed + 20W Wireless MagCharge",
+        specialFeature: "Pengisian Suhu Ekstrem -20°C & Sound by JBL",
+        categoryScore: { gaming: 88, camera: 91, battery: 99, daily: 95, budget: 85 },
+        imgUrl: "https://global.pro.infinixmobility.com/media/wysiwyg/x6851b_note40pro_5g_base4_family_1.png",
+        officialUrl: "https://id.infinixmobility.com/"
+      },
+      {
+        id: "hot-50-pro-plus",
+        name: "Infinix HOT 50 Pro+",
+        series: "HOT",
+        tagline: "Tipis Sadis 6.8mm dengan Layar Lengkung 3D AMOLED",
+        price: "Rp 2.499.000",
+        priceNum: 2499000,
+        chipset: "MediaTek Helio G100 6nm Power-Efficient",
+        display: "6.78\" 120Hz 3D-Curved AMOLED Always-On Display",
+        camera: "50MP Main Camera AI Enhanced + 8MP Front",
+        battery: "5000mAh, 33W FastCharge, Ketahanan Baterai 5 Tahun",
+        specialFeature: "Bodi Tertipis di Kelasnya (6.8mm) & IP54 Splash-proof",
+        categoryScore: { gaming: 80, camera: 82, battery: 90, daily: 92, budget: 95 },
+        imgUrl: "https://global.dev.infinixmobility.com/media/wysiwyg/x6853_note40_base4_family.png",
+        officialUrl: "https://id.infinixmobility.com/"
+      },
+      {
+        id: "smart-8",
+        name: "Infinix SMART 8",
+        series: "SMART",
+        tagline: "Paling Terjangkau dengan Fitur Magic Ring & 90Hz",
+        price: "Rp 1.099.000",
+        priceNum: 1099000,
+        chipset: "Unisoc T606 Octa-Core Processor",
+        display: "6.6\" Punch-Hole 90Hz Interactive Magic Ring",
+        camera: "13MP Dual AI Camera with Ring Flashlight",
+        battery: "5000mAh Baterai Awet Seharian Type-C",
+        specialFeature: "200% Super Volume DTS Audio & Desain Berkilau",
+        categoryScore: { gaming: 65, camera: 70, battery: 88, daily: 85, budget: 99 },
+        imgUrl: "https://global.dev.infinixmobility.com/media/wysiwyg/x6851_note40pro5g_base4_family.png",
+        officialUrl: "https://id.infinixmobility.com/"
+      }
+    ];
+
+    /* ==========================================================================
+       3. RENDER PRODUK & FILTERING
+       ========================================================================== */
+    const productsGrid = document.getElementById('productsGrid');
+    const searchInput = document.getElementById('searchInput');
+    const filterPills = document.querySelectorAll('.filter-btn');
+
+    let currentCategory = 'all';
+
+    function renderProducts(items) {
+      if (!items.length) {
+        productsGrid.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 4rem 1rem;">
+            <p style="font-size: 1.2rem; color: var(--text-muted);">Tidak ada smartphone yang cocok dengan pencarian Anda.</p>
+            <button class="btn btn-outline" style="margin-top: 1rem;" onclick="resetProductFilters()">Tampilkan Semua</button>
+          </div>
+        `;
+        return;
+      }
+
+      productsGrid.innerHTML = items.map(p => `
+        <div class="product-card">
+          <div class="product-badge-wrap">
+            <span class="badge ${p.series === 'GT' ? 'badge-orange' : p.series === 'ZERO' ? 'badge-cyan' : ''}">
+              ${p.series} SERIES
+            </span>
+          </div>
+
+          <div class="product-media">
+            <img 
+              src="${p.imgUrl}" 
+              alt="${p.name}" 
+              loading="lazy"
+              onerror="this.onerror=null; this.src='https://id.pro.infinixmobility.com/media/homeblock/20240223-181429.jpg';"
+            >
+          </div>
+
+          <div class="product-details">
+            <span class="product-series">${p.series} Flagship</span>
+            <h3 class="product-name">${p.name}</h3>
+            <p class="product-tagline">${p.tagline}</p>
+
+            <div class="product-quick-specs">
+              <div class="spec-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"></rect></svg>
+                <span>${p.chipset.split('+')[0]}</span>
+              </div>
+              <div class="spec-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path></svg>
+                <span>${p.display.split(',')[0]}</span>
+              </div>
+              <div class="spec-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                <span>${p.battery.split(',')[1] || p.battery}</span>
+              </div>
+            </div>
+
+            <div class="product-footer">
+              <div class="product-price">
+                <span>Harga Resmi ID</span>
+                ${p.price}
+              </div>
+              <button class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.78rem;" onclick="openProductModal('${p.id}')">
+                Detail Spek
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterAndSearch() {
+      const query = searchInput.value.toLowerCase().trim();
+      const filtered = infinixData.filter(p => {
+        const matchesCategory = (currentCategory === 'all') || (p.series.toUpperCase() === currentCategory.toUpperCase());
+        const matchesQuery = 
+          p.name.toLowerCase().includes(query) ||
+          p.chipset.toLowerCase().includes(query) ||
+          p.display.toLowerCase().includes(query) ||
+          p.tagline.toLowerCase().includes(query) ||
+          p.specialFeature.toLowerCase().includes(query);
+        return matchesCategory && matchesQuery;
+      });
+      renderProducts(filtered);
+    }
+
+    filterPills.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterPills.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCategory = btn.getAttribute('data-category');
+        playBeep(480, 0.06);
+        filterAndSearch();
+      });
+    });
+
+    searchInput.addEventListener('input', () => {
+      filterAndSearch();
+    });
+
+    function resetProductFilters() {
+      currentCategory = 'all';
+      searchInput.value = '';
+      filterPills.forEach(b => b.classList.remove('active'));
+      document.querySelector('.filter-btn[data-category="all"]').classList.add('active');
+      filterAndSearch();
+    }
+
+    function filterCategory(cat) {
+      currentCategory = cat;
+      filterPills.forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-category') === cat);
+      });
+      filterAndSearch();
+      playBeep(520, 0.08);
+    }
+
+    /* ==========================================================================
+       4. INTERACTIVE 1: SMARTPHONE MATCHER QUIZ
+       ========================================================================== */
+    const quizQuestions = [
+      {
+        question: "1. Apa kebutuhan smartphone paling utama untukmu?",
+        options: [
+          { title: "Hardcore Gaming & Turnamen", desc: "Performa 120 FPS tanpa frame drop dan sistem pendingin dingin.", scoreTag: "gaming" },
+          { title: "Kreator Konten & Vlog 4K", desc: "Kamera stabil OIS 4K 60FPS dan layar melengkung premium.", scoreTag: "camera" },
+          { title: "Produktivitas Cepat & Ngecas Kilat", desc: "All-Round FastCharge 100W, Wireless MagCharge, baterai awet.", scoreTag: "battery" },
+          { title: "Bodi Tipis Stylish & Harian", desc: "Desain ultra-ramping, ringan di saku, tampilan memikat.", scoreTag: "daily" },
+          { title: "Budget Paling Ramah di Kantong", desc: "Fungsi harian esensial, layar mulus, dan harga terjangkau.", scoreTag: "budget" }
+        ]
+      },
+      {
+        question: "2. Berapa rentang anggaran (budget) yang kamu siapkan?",
+        options: [
+          { title: "Di bawah Rp 1.5 Juta", desc: "Paling hemat untuk komunikasi, medsos, dan pelajar.", scoreTag: "budget" },
+          { title: "Rp 2.0 - 2.8 Juta", desc: "Kelas menengah serba bisa dengan layar AMOLED dan bodi ramping.", scoreTag: "daily" },
+          { title: "Rp 3.0 - 4.2 Juta", desc: "Performa tinggi, wireless charging, dan kamera OIS 108MP.", scoreTag: "battery" },
+          { title: "Rp 4.3 - 5.5 Juta ke atas", desc: "Spesifikasi flagship gaming atau kamera pro tanpa kompromi.", scoreTag: "gaming" }
+        ]
+      },
+      {
+        question: "3. Fitur teknologi apa yang paling membuatmu penasaran?",
+        options: [
+          { title: "Dual-Chip Gaming & Lampu Mecha LED", desc: "Kombinasi Dimensity 8200 dan Pixelworks display chip.", scoreTag: "gaming" },
+          { title: "Vlog 4K 60FPS Front/Rear & Koneksi GoPro", desc: "Kamera depan belakang bisa rekam video 4K jernih.", scoreTag: "camera" },
+          { title: "Wireless MagCharge & Chip Cheetah X1", desc: "Teknologi pengisian daya nirkabel magnetik instan.", scoreTag: "battery" },
+          { title: "Magic Ring Notifikasi Interaktif", desc: "Animasi pintar punch hole kamera untuk status harian.", scoreTag: "budget" }
+        ]
+      },
+      {
+        question: "4. Tipe desain layar mana yang paling kamu sukai?",
+        options: [
+          { title: "Layar Datar 144Hz Bezel-less Ultra Cepat", desc: "Genggaman solid, presisi sentuhan gaming tinggi.", scoreTag: "gaming" },
+          { title: "Layar 3D Curved AMOLED Mewah 120Hz", desc: "Sisi melengkung elegan, nyaman untuk nonton video.", scoreTag: "camera" },
+          { title: "Layar Punch-Hole Lebar 90Hz Hemat Daya", desc: "Tampilan luas untuk hiburan dan chatting harian.", scoreTag: "budget" }
+        ]
+      }
+    ];
+
+    let currentQuizStep = 0;
+    let userQuizScores = { gaming: 0, camera: 0, battery: 0, daily: 0, budget: 0 };
+
+    const quizProgressFill = document.getElementById('quizProgressFill');
+    const stepCounterBadge = document.getElementById('stepCounterBadge');
+    const quizQuestionView = document.getElementById('quizQuestionView');
+    const quizResultView = document.getElementById('quizResultView');
+    const quizQuestionTitle = document.getElementById('quizQuestionTitle');
+    const quizOptionsGrid = document.getElementById('quizOptionsGrid');
+    const quizPrevBtn = document.getElementById('quizPrevBtn');
+    const quizRestartBtn = document.getElementById('quizRestartBtn');
+
+    function renderQuizStep(stepIdx) {
+      const q = quizQuestions[stepIdx];
+      quizProgressFill.style.width = `${((stepIdx + 1) / quizQuestions.length) * 100}%`;
+      stepCounterBadge.innerText = `Langkah ${stepIdx + 1} dari ${quizQuestions.length}`;
+      quizQuestionTitle.innerText = q.question;
+      quizPrevBtn.style.visibility = stepIdx === 0 ? 'hidden' : 'visible';
+
+      quizOptionsGrid.innerHTML = q.options.map((opt, i) => `
+        <button class="quiz-option-btn" onclick="selectQuizOption('${opt.scoreTag}')">
+          <div class="quiz-option-title">
+            <span style="color: var(--infinix-green);">0${i+1}.</span> ${opt.title}
+          </div>
+          <div class="quiz-option-desc">${opt.desc}</div>
+        </button>
+      `).join('');
+    }
+
+    function selectQuizOption(scoreTag) {
+      userQuizScores[scoreTag] = (userQuizScores[scoreTag] || 0) + 10;
+      playBeep(580, 0.08);
+
+      if (currentQuizStep < quizQuestions.length - 1) {
+        currentQuizStep++;
+        renderQuizStep(currentQuizStep);
+      } else {
+        calculateQuizResult();
+      }
+    }
+
+    quizPrevBtn.addEventListener('click', () => {
+      if (currentQuizStep > 0) {
+        currentQuizStep--;
+        renderQuizStep(currentQuizStep);
+        playBeep(400, 0.08);
+      }
+    });
+
+    function calculateQuizResult() {
+      playSuccessChime();
+
+      // Find highest score category
+      let highestCategory = 'gaming';
+      let highestVal = -1;
+      for (const [cat, val] of Object.entries(userQuizScores)) {
+        if (val > highestVal) {
+          highestVal = val;
+          highestCategory = cat;
+        }
+      }
+
+      // Best matched phone based on category score
+      let bestPhone = infinixData[0];
+      let bestScore = -1;
+      infinixData.forEach(p => {
+        const sc = p.categoryScore[highestCategory] || 70;
+        if (sc > bestScore) {
+          bestScore = sc;
+          bestPhone = p;
+        }
+      });
+
+      // Show result
+      quizQuestionView.style.display = 'none';
+      quizResultView.style.display = 'block';
+
+      document.getElementById('resultMatchPercent').innerText = `${Math.min(99, 88 + Math.floor(Math.random() * 11))}% Match`;
+      document.getElementById('resultPhoneImg').src = bestPhone.imgUrl;
+      document.getElementById('resultPhoneSeries').innerText = `${bestPhone.series} SERIES`;
+      document.getElementById('resultPhoneName').innerText = bestPhone.name;
+      document.getElementById('resultPhoneReason').innerText = `Berdasarkan preferensi pilihanmu, ${bestPhone.name} adalah jodoh smartphone paling ideal dengan ${bestPhone.chipset}, ${bestPhone.display}, dan fitur unggulan ${bestPhone.specialFeature}.`;
+
+      document.getElementById('resultHighlightSpecs').innerHTML = `
+        <div class="spec-pill"><span class="title">Chipset Utama</span><span class="val">${bestPhone.chipset.split('+')[0]}</span></div>
+        <div class="spec-pill"><span class="title">Kamera</span><span class="val">${bestPhone.camera.split('+')[0]}</span></div>
+        <div class="spec-pill"><span class="title">Layar</span><span class="val">${bestPhone.display.split(',')[0]}</span></div>
+        <div class="spec-pill"><span class="title">Harga Resmi</span><span class="val">${bestPhone.price}</span></div>
+      `;
+
+      document.getElementById('resultViewDetailBtn').onclick = () => openProductModal(bestPhone.id);
+    }
+
+    quizRestartBtn.addEventListener('click', () => {
+      userQuizScores = { gaming: 0, camera: 0, battery: 0, daily: 0, budget: 0 };
+      currentQuizStep = 0;
+      quizResultView.style.display = 'none';
+      quizQuestionView.style.display = 'block';
+      renderQuizStep(0);
+      playBeep(500, 0.08);
+    });
+
+    /* ==========================================================================
+       5. INTERACTIVE 2: INFINIX GT MECHA STUDIO & RGB
+       ========================================================================== */
+    const cyberPhoneBody = document.getElementById('cyberPhoneBody');
+    const mechaRgbStrip = document.getElementById('mechaRgbStrip');
+    const bodyColorSwatches = document.querySelectorAll('.mecha-controls-box .swatch-btn[data-color]');
+    const rgbColorSwatches = document.querySelectorAll('#rgbColorPickers .swatch-btn');
+    const rgbModePills = document.querySelectorAll('#rgbModePills .mode-pill');
+    const toggleFpsBtn = document.getElementById('toggleFpsBtn');
+    const fpsValueText = document.getElementById('fpsValueText');
+    const triggerAudioPulseBtn = document.getElementById('triggerAudioPulseBtn');
+
+    let isHighFps = true;
+
+    // Change phone body color
+    bodyColorSwatches.forEach(btn => {
+      btn.addEventListener('click', () => {
+        bodyColorSwatches.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const colorClass = btn.getAttribute('data-color');
+        cyberPhoneBody.className = `cyber-phone-mockup ${colorClass}`;
+        playBeep(450, 0.05);
+      });
+    });
+
+    // Change RGB color
+    rgbColorSwatches.forEach(btn => {
+      btn.addEventListener('click', () => {
+        rgbColorSwatches.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const color = btn.getAttribute('data-rgb');
+        mechaRgbStrip.style.borderColor = color;
+        mechaRgbStrip.style.boxShadow = `0 0 20px ${color}, inset 0 0 12px ${color}`;
+        playBeep(700, 0.06);
+      });
+    });
+
+    // Change RGB Animation Mode
+    rgbModePills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        rgbModePills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const mode = pill.getAttribute('data-mode');
+
+        mechaRgbStrip.classList.remove('rgb-mode-breathing', 'rgb-mode-strobe', 'rgb-mode-rainbow');
+        if (mode !== 'static') {
+          mechaRgbStrip.classList.add(mode);
+        }
+        playBeep(620, 0.06);
+      });
+    });
+
+    // Toggle 120 FPS vs 60 FPS
+    toggleFpsBtn.addEventListener('click', () => {
+      isHighFps = !isHighFps;
+      if (isHighFps) {
+        fpsValueText.innerText = "120 FPS Turbo (Pixelworks ON)";
+        fpsValueText.style.color = "var(--infinix-green)";
+        toggleFpsBtn.innerText = "Ubah ke Mode 60 FPS Standar";
+        playBeep(880, 0.1, 'triangle');
+        showToast("Pixelworks X5 Turbo Aktif: Frame Rate Mulus 120 FPS");
+      } else {
+        fpsValueText.innerText = "60 FPS Standar";
+        fpsValueText.style.color = "var(--text-muted)";
+        toggleFpsBtn.innerText = "Akselerasi ke 120 FPS";
+        playBeep(440, 0.1, 'triangle');
+      }
+    });
+
+    triggerAudioPulseBtn.addEventListener('click', () => {
+      playSuccessChime();
+      mechaRgbStrip.style.transform = 'scale(1.15)';
+      setTimeout(() => { mechaRgbStrip.style.transform = 'scale(1)'; }, 250);
+      showToast("Mecha Lighting Sync Audio Pulse");
+    });
+
+    /* ==========================================================================
+       6. INTERACTIVE 3: CHEETAH X1 FASTCHARGE SIMULATOR
+       ========================================================================== */
+    let currentBatteryPercent = 15;
+    let chargeInterval = null;
+    let selectedChargeMode = 'hyper';
+
+    const batteryLevelFill = document.getElementById('batteryLevelFill');
+    const batteryPercentText = document.getElementById('batteryPercentText');
+    const wattageValue = document.getElementById('wattageValue');
+    const batteryTempText = document.getElementById('batteryTempText');
+    const startChargeBtn = document.getElementById('startChargeBtn');
+    const resetChargeBtn = document.getElementById('resetChargeBtn');
+    const chargeModeBtns = document.querySelectorAll('[data-charge-mode]');
+
+    function updateBatteryUI(percent, watts, temp, tempColor) {
+      batteryLevelFill.style.height = `${percent}%`;
+      batteryPercentText.innerText = `${percent}%`;
+      wattageValue.innerText = watts;
+      batteryTempText.innerText = temp;
+      batteryTempText.style.color = tempColor;
+    }
+
+    chargeModeBtns.forEach(card => {
+      card.addEventListener('click', () => {
+        chargeModeBtns.forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        selectedChargeMode = card.getAttribute('data-charge-mode');
+        playBeep(540, 0.05);
+
+        if (chargeInterval) {
+          clearInterval(chargeInterval);
+          chargeInterval = null;
+          startChargeBtn.innerHTML = `
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            Mulai Pengisian Daya
+          `;
+        }
+      });
+    });
+
+    startChargeBtn.addEventListener('click', () => {
+      if (chargeInterval) {
+        clearInterval(chargeInterval);
+        chargeInterval = null;
+        startChargeBtn.innerHTML = `
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          Lanjutkan Pengisian
+        `;
+        wattageValue.innerText = "Dijeda (0W)";
+        playBeep(350, 0.08);
+        return;
+      }
+
+      startChargeBtn.innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+        Jeda Pengisian
+      `;
+      playBeep(750, 0.1);
+
+      let stepIncrement = selectedChargeMode === 'hyper' ? 2 : selectedChargeMode === 'smart' ? 1.5 : 1;
+      let targetWatt = selectedChargeMode === 'hyper' ? '100W HyperCharge' : selectedChargeMode === 'smart' ? '70W SmartCharge' : '33W Low-Temp';
+      let tempDisplay = selectedChargeMode === 'hyper' ? '39.2°C (Aman Aktif)' : selectedChargeMode === 'smart' ? '36.5°C (Stabil)' : '34.0°C (Dingin)';
+      let tempColor = selectedChargeMode === 'hyper' ? '#f59e0b' : 'var(--infinix-green)';
+
+      chargeInterval = setInterval(() => {
+        currentBatteryPercent += stepIncrement;
+        playBeep(900 + currentBatteryPercent * 5, 0.02);
+
+        if (currentBatteryPercent >= 100) {
+          currentBatteryPercent = 100;
+          clearInterval(chargeInterval);
+          chargeInterval = null;
+          startChargeBtn.innerHTML = `
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Baterai Penuh (100%)
+          `;
+          updateBatteryUI(100, "Trickle Charge (1W)", "31.5°C (Dingin Penuh)", "var(--infinix-green)");
+          playSuccessChime();
+          showToast("Pengisian Selesai! Cheetah X1 Otomatis Memutus Aliran Daya");
+          return;
+        }
+
+        updateBatteryUI(Math.round(currentBatteryPercent), targetWatt, tempDisplay, tempColor);
+      }, 150);
+    });
+
+    resetChargeBtn.addEventListener('click', () => {
+      if (chargeInterval) {
+        clearInterval(chargeInterval);
+        chargeInterval = null;
+      }
+      currentBatteryPercent = 15;
+      updateBatteryUI(15, "Standby", "32°C (Optimal)", "var(--infinix-green)");
+      startChargeBtn.innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        Mulai Pengisian Daya
+      `;
+      playBeep(400, 0.08);
+      showToast("Baterai Direset ke 15%");
+    });
+
+    /* ==========================================================================
+       7. INTERACTIVE 4: SIDE-BY-SIDE PHONE COMPARATOR
+       ========================================================================== */
+    const compareSelectA = document.getElementById('compareSelectA');
+    const compareSelectB = document.getElementById('compareSelectB');
+    const compareColNameA = document.getElementById('compareColNameA');
+    const compareColNameB = document.getElementById('compareColNameB');
+    const compareTableBody = document.getElementById('compareTableBody');
+
+    function initCompareDropdowns() {
+      const optionsHtml = infinixData.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
+      compareSelectA.innerHTML = optionsHtml;
+      compareSelectB.innerHTML = optionsHtml;
+
+      compareSelectA.value = "gt-20-pro";
+      compareSelectB.value = "zero-40-5g";
+
+      updateComparison();
+    }
+
+    function updateComparison() {
+      const phoneA = infinixData.find(p => p.id === compareSelectA.value) || infinixData[0];
+      const phoneB = infinixData.find(p => p.id === compareSelectB.value) || infinixData[1];
+
+      compareColNameA.innerText = phoneA.name;
+      compareColNameB.innerText = phoneB.name;
+
+      const specsToCompare = [
+        { label: "Seri & Kategori", valA: `${phoneA.series} Series`, valB: `${phoneB.series} Series` },
+        { label: "Harga Resmi", valA: phoneA.price, valB: phoneB.price },
+        { label: "Dapur Pacu (Chipset)", valA: phoneA.chipset, valB: phoneB.chipset },
+        { label: "Layar & Tampilan", valA: phoneA.display, valB: phoneB.display },
+        { label: "Konfigurasi Kamera", valA: phoneA.camera, valB: phoneB.camera },
+        { label: "Baterai & Pengisian", valA: phoneA.battery, valB: phoneB.battery },
+        { label: "Fitur Eksklusif", valA: phoneA.specialFeature, valB: phoneB.specialFeature }
+      ];
+
+      compareTableBody.innerHTML = specsToCompare.map(row => `
+        <tr>
+          <th>${row.label}</th>
+          <td>${row.valA}</td>
+          <td>${row.valB}</td>
+        </tr>
+      `).join('');
+    }
+
+    compareSelectA.addEventListener('change', () => { playBeep(520, 0.06); updateComparison(); });
+    compareSelectB.addEventListener('change', () => { playBeep(520, 0.06); updateComparison(); });
+
+    /* ==========================================================================
+       8. INTERACTIVE 5: TRIVIA MINI-GAME
+       ========================================================================== */
+    const triviaData = [
+      {
+        question: "1. Apa nama chip manajemen daya pertama buatan mandiri Infinix?",
+        options: ["Cheetah X1", "Helio G99", "Bionic A17", "Snapdragon Power"],
+        answerIdx: 0,
+        explanation: "Benar! Infinix Cheetah X1 adalah chip manajemen daya mandiri pertama karya Infinix yang mengatur All-Round FastCharge 2.0."
+      },
+      {
+        question: "2. Seri Infinix apa yang dirancang khusus untuk turnamen & hardcore gaming?",
+        options: ["ZERO Series", "GT Series", "SMART Series", "HOT Series"],
+        answerIdx: 1,
+        explanation: "Tepat sekali! Seri GT (seperti GT 20 Pro) adalah official gaming phone MPL ID dengan desain Cyber Mecha dan chip display Pixelworks."
+      },
+      {
+        question: "3. Apa slogan global resmi dari brand Infinix?",
+        options: ["The Future is Now", "Never Settle", "Dare to Leap", "In Search of Incredible"],
+        answerIdx: 0,
+        explanation: "Tepat! 'THE FUTURE IS NOW' adalah moto global Infinix dalam menghadirkan teknologi mutakhir untuk anak muda."
+      },
+      {
+        question: "4. Berapa kecepatan perekaman video maksimal kamera depan & belakang pada Infinix ZERO 40 5G?",
+        options: ["1080p 30FPS", "4K 60FPS", "720p 60FPS", "8K 24FPS"],
+        answerIdx: 1,
+        explanation: "Luar biasa! Infinix ZERO 40 5G mendukung perekaman video 4K 60FPS sinematik baik pada kamera depan maupun belakang."
+      }
+    ];
+
+    let currentTriviaIdx = 0;
+    let triviaScore = 0;
+
+    const triviaQuestionText = document.getElementById('triviaQuestionText');
+    const triviaOptionsGrid = document.getElementById('triviaOptionsGrid');
+    const triviaProgressText = document.getElementById('triviaProgressText');
+    const triviaScoreText = document.getElementById('triviaScoreText');
+    const triviaFeedback = document.getElementById('triviaFeedback');
+    const triviaQuestionContainer = document.getElementById('triviaQuestionContainer');
+    const triviaFinishView = document.getElementById('triviaFinishView');
+    const restartTriviaBtn = document.getElementById('restartTriviaBtn');
+
+    function renderTriviaQuestion(idx) {
+      const q = triviaData[idx];
+      triviaProgressText.innerText = `Soal ${idx + 1} dari ${triviaData.length}`;
+      triviaScoreText.innerText = `Skor: ${triviaScore * 25}`;
+      triviaQuestionText.innerText = q.question;
+      triviaFeedback.style.display = 'none';
+
+      triviaOptionsGrid.innerHTML = q.options.map((opt, i) => `
+        <button class="quiz-option-btn" onclick="submitTriviaAnswer(${i})">
+          <div class="quiz-option-title">${opt}</div>
+        </button>
+      `).join('');
+    }
+
+    function submitTriviaAnswer(selectedIdx) {
+      const q = triviaData[currentTriviaIdx];
+      const buttons = triviaOptionsGrid.querySelectorAll('.quiz-option-btn');
+      buttons.forEach(b => b.disabled = true);
+
+      if (selectedIdx === q.answerIdx) {
+        triviaScore++;
+        playSuccessChime();
+        triviaFeedback.className = "trivia-feedback-alert correct";
+        triviaFeedback.innerHTML = `✓ ${q.explanation}`;
+      } else {
+        playBeep(250, 0.2, 'sawtooth');
+        triviaFeedback.className = "trivia-feedback-alert wrong";
+        triviaFeedback.innerHTML = `✕ Kurang tepat! Jawaban yang benar adalah <strong>${q.options[q.answerIdx]}</strong>.`;
+      }
+
+      setTimeout(() => {
+        if (currentTriviaIdx < triviaData.length - 1) {
+          currentTriviaIdx++;
+          renderTriviaQuestion(currentTriviaIdx);
+        } else {
+          showTriviaResults();
+        }
+      }, 2000);
+    }
+
+    function showTriviaResults() {
+      triviaQuestionContainer.style.display = 'none';
+      triviaFinishView.style.display = 'block';
+      playSuccessChime();
+
+      const finalScore = triviaScore * 25;
+      document.getElementById('triviaFinalScoreDesc').innerHTML = `
+        Skor Akhir Kamu: <strong style="color: var(--infinix-green); font-size: 1.4rem;">${finalScore}/100</strong><br>
+        ${finalScore === 100 ? '🎖️ Sempurna! Kamu adalah Master Sejati Komunitas Infinix ID!' : 'Bagus sekali! Kamu sudah sangat mengenal teknologi canggih Infinix.'}
+      `;
+    }
+
+    restartTriviaBtn.addEventListener('click', () => {
+      currentTriviaIdx = 0;
+      triviaScore = 0;
+      triviaFinishView.style.display = 'none';
+      triviaQuestionContainer.style.display = 'block';
+      renderTriviaQuestion(0);
+      playBeep(520, 0.08);
+    });
+
+    /* ==========================================================================
+       9. MODAL POPUP DETAIL SPESIFIKASI
+       ========================================================================== */
+    const productModal = document.getElementById('productModal');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const modalBodyContent = document.getElementById('modalBodyContent');
+
+    function openProductModal(phoneId) {
+      const p = infinixData.find(item => item.id === phoneId);
+      if (!p) return;
+
+      playBeep(620, 0.08);
+      modalBodyContent.innerHTML = `
+        <div style="text-align: center; background: radial-gradient(circle at center, #182236, #090e18); border-radius: 18px; padding: 2rem;">
+          <img 
+            src="${p.imgUrl}" 
+            alt="${p.name}" 
+            style="max-height: 240px; object-fit: contain; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.8));"
+            onerror="this.onerror=null; this.src='https://id.pro.infinixmobility.com/media/homeblock/20240223-181429.jpg';"
+          >
+          <div style="margin-top: 1rem;">
+            <span class="badge ${p.series === 'GT' ? 'badge-orange' : p.series === 'ZERO' ? 'badge-cyan' : ''}">
+              ${p.series} SERIES
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 1.7rem; color: #fff; margin-bottom: 0.35rem;">${p.name}</h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.25rem;">${p.tagline}</p>
+
+          <div style="font-size: 1.4rem; font-weight: 800; color: var(--infinix-green); margin-bottom: 1.25rem;">
+            ${p.price}
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.88rem; margin-bottom: 1.75rem; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+            <div><strong style="color:#fff;">Prosesor:</strong> <span style="color:var(--text-muted);">${p.chipset}</span></div>
+            <div><strong style="color:#fff;">Layar:</strong> <span style="color:var(--text-muted);">${p.display}</span></div>
+            <div><strong style="color:#fff;">Kamera:</strong> <span style="color:var(--text-muted);">${p.camera}</span></div>
+            <div><strong style="color:#fff;">Baterai & Daya:</strong> <span style="color:var(--text-muted);">${p.battery}</span></div>
+            <div><strong style="color:#fff;">Fitur Unggulan:</strong> <span style="color:var(--text-muted);">${p.specialFeature}</span></div>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="https://id.infinixmobility.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.82rem; padding: 0.65rem 1.4rem;">
+              Buka di id.infinixmobility.com
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline></svg>
+            </a>
+            <button class="btn btn-outline" style="font-size: 0.82rem; padding: 0.65rem 1.4rem;" onclick="copyPhoneShare('${p.name}')">
+              Salin Info
+            </button>
+          </div>
+        </div>
+      `;
+
+      productModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function copyPhoneShare(phoneName) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(`${phoneName} - Cek info lengkapnya di https://id.infinixmobility.com/`);
+        showToast(`Info ${phoneName} berhasil disalin!`);
+      }
+    }
+
+    modalCloseBtn.addEventListener('click', closeModal);
+    productModal.addEventListener('click', (e) => {
+      if (e.target === productModal) closeModal();
+    });
+
+    function closeModal() {
+      productModal.classList.remove('active');
+      document.body.style.overflow = '';
+      playBeep(350, 0.05);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && productModal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    /* ==========================================================================
+       10. MOBILE MENU TOGGLE & SMOOTH SCROLL HIGHLIGHTING
+       ========================================================================== */
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('mobile-open');
+      playBeep(450, 0.05);
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('mobile-open');
+        playBeep(500, 0.05);
+      });
+    });
+
+    // Active link on scroll
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section[id]');
+      const scrollY = window.pageYOffset;
+
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 120;
+        const sectionId = current.getAttribute('id');
+        const link = document.querySelector(`.nav-links a[href*="${sectionId}"]`);
+
+        if (link) {
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        }
+      });
+    });
+
+    /* ==========================================================================
+       INITIALIZATION
+       ========================================================================== */
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProducts(infinixData);
+      renderQuizStep(0);
+      initCompareDropdowns();
+      renderTriviaQuestion(0);
+    });
+  </script>
+</body>
+</html>
